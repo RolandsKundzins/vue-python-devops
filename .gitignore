@@ -1,3 +1,4 @@
+############# For Nuxt 3 projects #############
 # Nuxt dev/build outputs
 .output
 .data
@@ -22,3 +23,10 @@ logs
 .env
 .env.*
 !.env.example
+
+############# For Python backend #############
+
+venv/
+__pycache__/
+*.pyc
+.env

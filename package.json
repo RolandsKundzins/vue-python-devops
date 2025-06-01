@@ -4,14 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "_______COMMON_______": "_______________________________________",
+    "dev": "concurrently --kill-others-on-fail --names PY,NUXT --prefix \"[{name}]\" --prefix-colors cyan,magenta \"pnpm run dev:py\" \"pnpm run dev:nuxt\"",
+    "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
+
+    "_______FOR_PYTHON_BACKEND_______": "_______________________________________",
+    "dev:py": "cd python_backend && uvicorn main:app --reload",
+    "lint:py": "flake8 python_backend/main.py",
+    "format:py": "black python_backend/main.py",
+    "format-check:py": "black python_backend/main.py",
+    "_______FOR_NUXT_FRONTEND______": "_______________________________________",
+    "dev:nuxt": "cd nuxt_frontend && pnpm run dev",
+    "lint:nuxt": "cd nuxt_frontend && pnpm run lint"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.5.0",
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "husky": "^9.1.7"
   }
 }

@@ -1,3 +1,6 @@
 # Frontend (Nuxt) lint
-cd nuxt
-pnpm lint
+pnpm lint:nuxt
+
+# Backend (Python)
+pnpm format-check:py
+pnpm lint:py
