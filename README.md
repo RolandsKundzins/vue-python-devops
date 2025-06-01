@@ -1,6 +1,6 @@
 # Vue Python Devops project
 
-This is a learning project for better understanding tools and best practices at my current job.
+This is a learning project for better understanding of tools and best practices at my current job.
 
 ## What I plan to put in here:
 - Vue/Nuxt frontend

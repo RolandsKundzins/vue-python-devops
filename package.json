@@ -11,9 +11,9 @@
 
     "_______FOR_PYTHON_BACKEND_______": "_______________________________________",
     "dev:py": "cd python_backend && uvicorn main:app --reload",
-    "lint:py": "flake8 python_backend/main.py",
-    "format:py": "black python_backend/main.py",
-    "format-check:py": "black python_backend/main.py",
+    "lint:py": "flake8 python_backend --config=python_backend/.flake8",
+    "format:py": "black python_backend",
+    "format-check:py": "black --check python_backend",
     "_______FOR_NUXT_FRONTEND______": "_______________________________________",
     "dev:nuxt": "cd nuxt_frontend && pnpm run dev",
     "lint:nuxt": "cd nuxt_frontend && pnpm run lint"

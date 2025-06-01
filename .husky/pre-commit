@@ -1,6 +1,18 @@
+# For Windows Git Bash:
+echo "⚠️ Make sure python virtual environment is active before commiting ⚠️"
+
 # Frontend (Nuxt) lint
+echo "⏳ Running frontend lint (Nuxt)... ⏳"
 pnpm lint:nuxt
+echo "✅ Frontend linting is Good (Nuxt) ✅"
+echo "--------------------------------------"
 
 # Backend (Python)
+echo "⏳ Running backend format check (Python)... ⏳"
 pnpm format-check:py
+echo "✅ Backend format check is Good (Python) ✅"
+echo "--------------------------------------"
+
+echo "⏳ Running backend lint (Python)... ⏳"
 pnpm lint:py
+echo "✅ Backend linting is Good (Python) ✅"
