@@ -1,0 +1,3 @@
+# Frontend (Nuxt) lint
+cd nuxt
+pnpm lint
