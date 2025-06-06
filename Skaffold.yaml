@@ -1,0 +1,32 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: vue-python-devops
+
+build:
+  local:
+    push: false
+  artifacts:
+    - image: nuxt-frontend
+      context: nuxt_frontend
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        manual:
+          - src: "**/*.vue"
+            dest: .
+          - src: "**/*.ts"
+            dest: .
+          - src: "nuxt.config.ts"
+            dest: .
+
+manifests:
+  rawYaml:
+    - kubernetes/dev/deployment.yaml
+    - kubernetes/dev/service.yaml
+
+portForward:
+  - resourceType: service
+    resourceName: nuxt-service
+    port: 80
+    localPort: 3000
