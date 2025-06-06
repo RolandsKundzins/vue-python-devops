@@ -16,7 +16,8 @@
     "format-check:py": "black --check python_backend",
     "_______FOR_NUXT_FRONTEND______": "_______________________________________",
     "dev:nuxt": "cd nuxt_frontend && pnpm run dev",
-    "lint:nuxt": "cd nuxt_frontend && pnpm run lint"
+    "lint:nuxt": "cd nuxt_frontend && pnpm run lint",
+    "postinstall": "husky install"
   },
   "keywords": [],
   "author": "",

@@ -17,11 +17,3 @@ spec:
           image: nuxt-frontend:dev
           ports:
             - containerPort: 3000
-      #     volumeMounts:
-      #       - name: source-code
-      #         mountPath: /app
-      # volumes:
-      #   - name: source-code
-      #     hostPath:
-      #       path: ./nuxt_frontend
-      #       type: Directory
