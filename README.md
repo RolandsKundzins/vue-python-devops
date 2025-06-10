@@ -13,6 +13,16 @@ This is a learning project for better understanding of tools and best practices 
 
 # Setup Instructions
 
+
+## For running using Skaffold
+- Download docker desktop
+- Go to settings and enable kubernetes
+- Run:
+```bash
+skaffold dev
+```
+- Enjoy nice dev experience
+
 ## Nuxt/Vue frontend:
 
 ```bash
