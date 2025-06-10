@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",               // Includes ESLint and others
+    "source.fixAll.eslint": "explicit"         // Specifically ESLint
+  },
+  "eslint.validate": ["javascript", "typescript", "vue"],
+  "prettier.enable": true,
+    "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.tabSize": 4,
+  }
+}
