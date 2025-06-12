@@ -13,7 +13,10 @@ spec:
         app: nuxt-frontend
     spec:
       containers:
-        - name: nuxt-container
-          image: nuxt-frontend:dev
+        - name: frontend-container
+          image: nuxt-frontend-dev # TODO: should i mby change skaffold.yaml to this?
+          env:
+          - name: API_BASE_URL
+            value: "http://backend-service:8000"
           ports:
             - containerPort: 3000

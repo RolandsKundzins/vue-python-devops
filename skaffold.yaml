@@ -7,8 +7,8 @@ build:
   local:
     push: false
   artifacts:
-    - image: nuxt-frontend
-      context: nuxt_frontend
+    - image: nuxt-frontend-dev # image specified in *deployment.yaml
+      context: nuxt_frontend # folder name
       docker:
         dockerfile: Dockerfile.dev
       sync:
@@ -19,14 +19,31 @@ build:
             dest: .
           - src: "nuxt.config.ts"
             dest: .
+    - image: python-backend-dev
+      context: python_backend
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        manual:
+          - src: "**/*.py"
+            dest: .
 
 manifests:
   rawYaml:
-    - kubernetes/dev/deployment.yaml
-    - kubernetes/dev/service.yaml
+    - kubernetes/dev/frontend-deployment.yaml
+    - kubernetes/dev/frontend-service.yaml
+    - kubernetes/dev/backend-service.yaml
+    - kubernetes/dev/backend-deployment.yaml
 
+
+# Allow the ports of the services to be forwarded to my local machine
 portForward:
   - resourceType: service
-    resourceName: nuxt-service
-    port: 80
-    localPort: 3000
+    resourceName: frontend-service
+    port: 3000        # Port used in kubernetes frontend-service.yaml
+    localPort: 3000   # Port on my windows machine
+
+  - resourceType: service
+    resourceName: backend-service
+    port: 8000        # Port usedin kubernetes backend-service.yaml
+    localPort: 8000   # Port on my windows machine

@@ -16,12 +16,12 @@ This is a learning project for better understanding of tools and best practices 
 
 ## For running using Skaffold
 - Download docker desktop
-- Go to settings and enable kubernetes
+- Go to settings and enable kubernetes (if not working, mby this: https://github.com/docker/for-mac/issues/7136)
 - Run:
 ```bash
 skaffold dev
 ```
-- Enjoy nice dev experience
+- Enjoy nice dev experience with hot reload and live updates
 
 ## Nuxt/Vue frontend:
 

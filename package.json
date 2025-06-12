@@ -8,9 +8,8 @@
     "dev": "concurrently --kill-others-on-fail --names PY,NUXT --prefix \"[{name}]\" --prefix-colors cyan,magenta \"pnpm run dev:py\" \"pnpm run dev:nuxt\"",
     "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "_______FOR_PYTHON_BACKEND_______": "_______________________________________",
-    "dev:py": "cd python_backend && uvicorn main:app --reload",
+    "dev:py": "cd python_backend && uvicorn app.main:app --reload",
     "lint:py": "flake8 python_backend --config=python_backend/.flake8",
     "format:py": "black python_backend",
     "format-check:py": "black --check python_backend",
